@@ -1,17 +1,23 @@
-<<<<<<< HEAD
-# Sample Hardhat Project
+# 🛍️ NFT Marketplace
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+A simple full-stack NFT Marketplace built with **Hardhat**, **Solidity**, and **Next.js**. Users can mint, list, buy, and sell NFTs securely on Ethereum.
 
-Try running some of the following tasks:
+---
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
-=======
-# NftMarketPlace
->>>>>>> b751ac66948242fb638c4f0424400253f6368c19
+## 🚀 Features
+
+- Mint unique NFTs with metadata
+- List NFTs for sale on the marketplace
+- Buy and sell NFTs peer-to-peer
+- View listed, owned, and sold items
+- Next.js frontend for a smooth user experience
+
+---
+
+## ⚙️ Tech Stack
+
+- **Solidity** — Smart contracts
+- **Hardhat** — Ethereum development
+- **Next.js** — Frontend framework
+- **Ethers.js** — Blockchain interactions
+- **Node.js** — Backend API routes if needed
