@@ -1,1 +1,0 @@
-NFT market place Notes:

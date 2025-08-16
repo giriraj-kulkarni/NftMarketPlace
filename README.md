@@ -1,17 +1,32 @@
-<<<<<<< HEAD
-# Sample Hardhat Project
+# 🛒 NFT Marketplace (Hardhat + Next.js)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+A decentralized NFT Marketplace built with **Hardhat**, **Solidity**, and **Next.js**.  
+Users can mint, buy, and sell NFTs locally on a Hardhat blockchain.
 
-Try running some of the following tasks:
+---
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
-=======
-# NftMarketPlace
->>>>>>> b751ac66948242fb638c4f0424400253f6368c19
+## 🚀 Quick Start
+
+Clone the repo, install dependencies, start Hardhat, deploy contracts, and launch the frontend:
+
+```bash
+git clone https://github.com/giriraj-kulkarni/nft-marketplace.git
+cd nft-marketplace
+npm install
+npx hardhat node & npx hardhat run scripts/deploy.js --network localhost & npm run dev
+
+
+### Now open 👉 http://localhost:3000 in your browser and connect MetaMask to the Hardhat local network (http://127.0.0.1:8545).
+
+# Useful Commands
+
+npx hardhat compile   # Compile contracts
+npx hardhat test      # Run tests
+npx hardhat node      # Start local blockchain
+npm run dev           # Run Next.js frontend
+
+
+
+License
+
+MIT

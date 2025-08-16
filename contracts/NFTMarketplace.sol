@@ -4,7 +4,7 @@ pragma solidity ^0.8.4;
 //internal import for nft
 
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "hardhat/console.sol";
@@ -47,9 +47,7 @@ contract NFTMarketplace is ERC721URIStorage{
 }
 
     constructor() ERC721("NFT Metavarse Token", "MYNFT") {
-        owner == payable(msg.sender);
-
-
+        owner = payable(msg.sender);
     }
 
     function updateListingPrice(uint256 _listingPrice) public payable onlyOwner(){
@@ -127,25 +125,23 @@ contract NFTMarketplace is ERC721URIStorage{
     //function create market sale
 
     function createMarketSale(uint256 tokenId) public payable{
-        uint256 price = idMarketItem[tokenId].price;
+    uint256 price = idMarketItem[tokenId].price;
 
-        require(msg.value == price,"please submit the asking price in order to complete the process");
+    require(msg.value == price,"please submit the asking price in order to complete the process");
 
-        idMarketItem[tokenId].owner = payable(msg.sender);
-        idMarketItem[tokenId].sold = true;
-        idMarketItem[tokenId].owner = payable(address(0));
+    idMarketItem[tokenId].owner = payable(msg.sender);
+    idMarketItem[tokenId].sold = true;
+    // Removing this line: idMarketItem[tokenId].owner = payable(address(0));
 
 
-        _itemsSold.increment();
+    _itemsSold.increment();
 
-        _transfer(address(this), msg.sender, tokenId);
+    _transfer(address(this), msg.sender, tokenId);
 
-        payable(owner).transfer(listingPrice);
+    payable(owner).transfer(listingPrice);
 
-        payable(idMarketItem[tokenId].seller).transfer(msg.value);
-
-        
-    }
+    payable(idMarketItem[tokenId].seller).transfer(msg.value);
+}
 
 
     //getting unsold nft data

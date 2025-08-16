@@ -4,7 +4,16 @@
   "description": "nft",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node": "hardhat node",
+    "deploy:localhost": "hardhat run scripts/deploy-localhost.js --network localhost",
+    "compile": "hardhat compile",
+    "frontend:dev": "cd nft-marketplace-frontend && npm run dev",
+    "frontend:build": "cd nft-marketplace-frontend && npm run build",
+    "frontend:start": "cd nft-marketplace-frontend && npm start",
+    "setup": "node scripts/setup-local.js",
+    "start:local": "npm run setup && npm run frontend:dev",
+    "deploy:vercel": "node scripts/deploy-vercel.js"
   },
   "author": "Giriraj Kulkarni",
   "license": "ISC",
@@ -13,6 +22,6 @@
     "hardhat": "^2.25.0"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.9.3"
+    "@openzeppelin/contracts": "^4.9.6"
   }
 }
